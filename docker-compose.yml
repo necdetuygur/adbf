@@ -1,0 +1,11 @@
+services:
+  adbf:
+    image: node:24-alpine
+    container_name: adbf
+    working_dir: /app
+    command: sh -c "npm install -g adbf && adbf"
+    environment:
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
