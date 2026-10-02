@@ -1,0 +1,7 @@
+FROM node:24-alpine
+RUN mkdir /home/node/app
+WORKDIR /home/node/app
+COPY . /home/node/app/.
+RUN npm install
+EXPOSE 3000
+CMD [ "node", "index.js" ]
